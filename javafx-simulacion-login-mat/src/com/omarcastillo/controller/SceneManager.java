@@ -60,12 +60,15 @@ import javax.swing.JOptionPane;
         }
     }
     
-    public void ventanaBienvenida(){
+    public void ventanaBienvenida(String nombreCompleto){
         try{
             escenarioSecundaria = new Stage();
             this.escenarioSecundaria.initStyle(StageStyle.TRANSPARENT);
             this.escenarioSecundaria.initModality(Modality.APPLICATION_MODAL);
-            BienvenidaView bienvenida = new BienvenidaView();
+            BienvenidaView bienvenida = new BienvenidaView(nombreCompleto);
+            bienvenida.getBtnCerrarVentanaSesion().setOnMouseClicked(evento -> {
+                escenarioSecundaria.close();
+            });
             escenaPrincipal = new Scene( bienvenida, 200, 300 );
             this.escenarioSecundaria.setScene(escenaPrincipal);
             this.escenarioSecundaria.sizeToScene();
