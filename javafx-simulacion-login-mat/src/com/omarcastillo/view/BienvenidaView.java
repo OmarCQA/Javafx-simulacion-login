@@ -10,6 +10,8 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;
 import javafx.scene.layout.BorderStrokeStyle;
@@ -17,6 +19,7 @@ import javafx.scene.layout.BorderWidths;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 /**
  *
@@ -39,8 +42,14 @@ public class BienvenidaView extends VBox {
         this.setBorder(new Border( 
                 new BorderStroke( Color.LAVENDERBLUSH, //Color del borde
                             BorderStrokeStyle.SOLID, //estilo de linea
-                            new CornerRadii(20),//Pixeles de redondeado
-                            new BorderWidths(7))//Ancho del Borde
+                            new CornerRadii(28),//Pixeles de redondeado
+                            new BorderWidths(5))//Ancho del Borde
+        ));
+        
+        this.setBackground(new Background(
+                new BackgroundFill(Paint.valueOf("#6DB3E8"), //Color del fondo
+                        new CornerRadii(22), //Pixeles del redondeado
+                        Insets.EMPTY) //Espaciado del fondo
         ));
         
         lblBienvenida = new Label("¡Bienvenido " + nombreCompleto + "!");
